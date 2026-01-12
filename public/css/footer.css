@@ -1,0 +1,52 @@
+body {
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.wrapper {
+  min-height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+footer {
+  margin-top: auto !important;
+}
+
+
+/* Blur glass effect footer */
+.footer-blur {
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  background: rgba(255, 255, 255, 0.55) !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Footer links */
+.footer-link {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+}
+
+.footer-link:hover {
+  color: #444;
+}
+
+/* Social icons */
+.footer-social {
+  font-size: 1.4rem;
+  color: #000;
+  transition: 0.3s;
+}
+
+.footer-social:hover {
+  color: #514d4d !important;
+  transform: translateY(-3px);
+}
+
+/* Divider line */
+.footer-blur hr {
+  border-color: rgba(0, 0, 0, 0.2);
+}

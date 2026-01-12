@@ -1,0 +1,320 @@
+.navbar{
+    height: 5rem;
+    background-color: rgb(179, 205, 227) !important;
+     
+}
+.navbar-nav{
+    margin-left: 5rem;
+}
+.navbar-brand{
+    font-family: 'Times New Roman', Times, serif !important;
+    font-size: 1.5rem;
+    margin-left: 0.5rem;
+}
+.nav-blur{
+     backdrop-filter: blur(10px) !important;
+     background: rgba(255, 255, 255, 0.4) !important; /* transparent white */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+ .nav-blur .nav-link {
+  color: #000 !important;    /* dark black */
+  font-weight: 600;
+}
+
+.nav-blur .nav-link:hover {
+  color: #333 !important;    /* darker on hover */
+}
+
+/* Navbar Background - Glassmorphism */
+.custom-navbar {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    padding: 0.8rem 1rem;
+}
+
+/* Brand Styling */
+.stylish-brand {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #ff385c !important; /* Airbnb red touch */
+    transition: transform 0.3s ease;
+}
+.stylish-brand:hover {
+    transform: scale(1.05);
+}
+
+/* 3D Search Bar Container */
+.search-3d {
+    background: #fff;
+    border-radius: 50px;
+    padding: 4px;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.1), 0 4px 6px rgba(0,0,0,0.1); /* Inner & Outer Shadow */
+    transition: all 0.3s ease;
+    border: 1px solid #ddd;
+}
+
+.search-3d:focus-within {
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+    transform: translateY(-2px);
+}
+
+.search-input {
+    border: none !important;
+    background: transparent !important;
+    border-radius: 50px !important;
+    padding-left: 20px !important;
+    box-shadow: none !important;
+    min-width: 250px;
+}
+
+.search-btn {
+    background: #fe424d !important;
+    color: white !important;
+    border-radius: 50% !important;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none !important;
+    transition: background 0.3s ease;
+}
+
+.search-btn:hover {
+    background: #d93b44 !important;
+    transform: rotate(10deg);
+}
+
+/* User Icon Dropdown */
+.user-btn {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    padding: 5px 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.user-btn:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.user-btn::after {
+    display: none; /* Removes default arrow */
+}
+
+/* Navbar Overall Style */
+.custom-nav {
+    background: rgba(255, 255, 255, 0.85); /* Glassmorphism effect */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 0.8rem 1.5rem;
+    transition: all 0.3s ease;
+}
+
+/* Brand/Logo Styling */
+.brand-logo {
+    color: #ff385c !important; /* Airbnb pink/red shade */
+    font-size: 1.5rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Nav Links Hover Effect */
+.nav-hover-effect {
+    font-weight: 500;
+    color: #484848 !important;
+    position: relative;
+    margin: 0 10px;
+}
+
+.nav-hover-effect::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ff385c;
+    transition: width 0.3s ease;
+}
+
+.nav-hover-effect:hover::after {
+    width: 100%;
+}
+
+/* Search Box Styling */
+.search-box {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 40px;
+    padding: 5px 15px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.05);
+    transition: box-shadow 0.2s ease;
+}
+
+.search-box:focus-within {
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.search-input {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    font-size: 0.9rem;
+    width: 200px;
+}
+
+.btn-search {
+    background-color: #ff385c;
+    color: white;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-search:hover {
+    background-color: #d70466;
+    color: white;
+}
+
+/* Profile Dropdown Button */
+.profile-btn {
+    border: 1px solid #ddd !important;
+    border-radius: 30px !important;
+    padding: 5px 12px !important;
+    background: white !important;
+    display: flex;
+    align-items: center;
+    transition: box-shadow 0.2s ease !important;
+}
+
+.profile-btn:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.18);
+}
+
+.profile-btn::after {
+    display: none; /* Removes the default arrow */
+}
+
+/* Dropdown Menu Customization */
+.dropdown-menu {
+    border-radius: 12px;
+}
+
+.dropdown-item:hover {
+    background-color: #f7f7f7;
+}
+
+
+/* 1. Transparent Navbar with Blur */
+.custom-nav-glass {
+    background: rgba(255, 255, 255, 0.6) !important; /* Crystal clear transparency */
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 0.6rem 2rem;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* 2. Logo Styling (Deep Blue Theme) */
+.brand-design {
+    color: #000000 !important; /* Royal Blue */
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* 3. Navigation Links */
+.menu-link {
+    color: #010202 !important; /* Dark Greyish Blue */
+    font-weight: 500;
+    font-size: 0.95rem;
+    margin: 0 8px;
+    transition: color 0.3s ease;
+}
+
+.menu-link:hover {
+    color: #000000 !important; /* Blue on hover */
+}
+
+/* 4. Improved Search Bar */
+.search-wrapper {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 50px;
+    padding: 4px 6px 4px 18px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.search-wrapper:focus-within {
+    box-shadow: 0 0 0 3px rgba(209, 41, 41, 0.2);
+    border-color: #eb2525;
+}
+
+.search-input {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    width: 220px;
+    color: #371f23;
+}
+
+.btn-search-icon {
+    background: #311112 !important; /* Bright Blue */
+    color: white !important;
+    border-radius: 50% !important;
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    display: grid;
+    place-items: center;
+    border: none;
+}
+
+/* 5. Profile Pill Button */
+.profile-pill {
+    border: 1px solid #e5e7eb !important;
+    border-radius: 40px !important;
+    background: white !important;
+    padding: 6px 14px !important;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+}
+
+.profile-pill:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+}
+
+.profile-icon {
+    color: #806b80;
+    font-size: 1.4rem;
+}
+
+/* 6. Dropdown Menu Style */
+.custom-dropdown {
+    border: none !important;
+    border-radius: 16px !important;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    margin-top: 15px !important;
+}
+
+.dropdown-item {
+    border-radius: 8px;
+    padding: 10px 15px;
+}

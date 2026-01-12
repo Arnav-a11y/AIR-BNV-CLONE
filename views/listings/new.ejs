@@ -1,0 +1,60 @@
+<% layout("/layouts/boilerplate") %>
+
+    <div class="container form-container mt-5 mb-5">
+        <h2 class="text-center mb-4 fw-bold">Create New Listing</h2>
+
+        <form action="/listings/new" method="POST" class="  needs-validation custom-form shadow-lg p-4 rounded" 
+            novalidate  enctype="multipart/form-data">
+
+            <div class="mb-3">
+                <label class="form-label fw-semibold">Title</label>
+                <input type="text" name="listing[title]" class="form-control" placeholder="Enter title" required>
+                <div class="invalid-feedback">
+                    Enter valid title
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-semibold">Description</label>
+                <textarea name="listing[description]" class="form-control" rows="4" placeholder="Write description"
+                    required></textarea>
+                <div class="invalid-feedback">
+                    Please enter a message in the textarea.
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-semibold">Image Upload</label>
+                <input type="file" name="listing[image]" class="form-control">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-semibold">Price</label>
+                <input type="text" name="listing[price]" class="form-control" min="0" max="100000"
+                    placeholder="Enter price" required>
+                <div class="invalid-feedback">
+                    please enter a valid price
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-semibold">Location</label>
+                <input type="text" name="listing[location]" class="form-control" placeholder="Enter location" required>
+                <div class="invalid-feedback">
+                    location should be valid
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <label class="form-label fw-semibold">Country</label>
+                <input type="text" name="listing[country]" class="form-control" placeholder="like India, USA, China"
+                    required>
+                <div class="invalid-feedback">
+                    country should be valid
+                </div>
+            </div>
+
+            <button class="btn btn-dark w-100 py-2 fw-bold submit-btn">Submit Listing</button>
+
+        </form>
+    </div>

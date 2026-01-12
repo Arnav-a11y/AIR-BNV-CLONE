@@ -1,0 +1,24 @@
+/* Stylish Star Rating Display */
+.starability-result {
+    position: relative;
+    display: inline-block;
+    font-size: 1.2rem;
+    line-height: 1;
+    color: #e4e5e9;
+}
+
+.starability-result::before {
+    content: "★★★★★";
+    letter-spacing: 3px;
+}
+
+.starability-result::after {
+    content: "★★★★★";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: calc(var(--rating) / 5 * 100%);
+    overflow: hidden;
+    color: #f4c150;
+    letter-spacing: 3px;
+}

@@ -1,0 +1,86 @@
+
+:root {
+    --brand-color: #fb7c94;
+    --dark-accent: #222222;
+    --light-bg: #ffa4a4;
+}
+
+body {
+    background-color: #fff;
+    color: var(--dark-accent);
+}
+
+.text-gradient {
+    -webkit-background-clip: text;
+    background-clip: border-box;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Image Hero Section */
+.image-zoom-container {
+    height: 500px;
+    border-radius: 24px;
+}
+
+.show-hero-img {
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.image-zoom-container:hover .show-hero-img {
+    transform: scale(1.05);
+}
+
+/* Price & Booking Card */
+.booking-card {
+    border: 1px solid #dddddd !important;
+    position: sticky;
+    top: 100px;
+}
+
+.btn-gradient {
+    background: linear-gradient(90deg, #E31C5F 0%, #FF385C 100%) !important;
+    border: none !important;
+    color: white !important;
+}
+
+.btn-gradient:hover {
+    opacity: 0.9;
+}
+
+/* Review Tile */
+.review-tile {
+    border-bottom: 1px solid #eee !important;
+    transition: background 0.3s ease;
+}
+
+.review-tile:hover {
+    background-color: #fafafa;
+}
+
+/* Form Styling */
+.form-control:focus {
+    border-color: var(--brand-color);
+    box-shadow: none;
+}
+
+.form-range::-webkit-slider-thumb {
+    background: var(--brand-color);
+}
+
+/* General Layout */
+.badge.border {
+    padding: 8px 15px;
+}
+
+.description-text {
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+@media (max-width: 768px) {
+    .image-zoom-container {
+        height: 300px;
+    }
+}
