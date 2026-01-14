@@ -1,0 +1,1 @@
+This is a fully functional Full-Stack AirBnB Clone that allows users to browse, list, and book unique accommodations. The goal of this project was to replicate the core features of AirBnB, focusing on a seamless user experience and robust backend management.
