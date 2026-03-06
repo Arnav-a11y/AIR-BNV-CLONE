@@ -1,52 +1,99 @@
 <nav class="navbar navbar-expand-md sticky-top custom-nav-glass">
-    <div class="container-fluid">
-        <a class="navbar-brand brand-design" href="/">
-            <i class="fa-solid fa-tents"></i>
-            <span class="brand-text">Aruva</span>
-        </a>
+  <div class="container-fluid">
 
-        <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent">
-            <span class="navbar-toggler-icon"></span>
+    <!-- Brand -->
+    <a class="navbar-brand brand-design" href="/">
+      <i class="fa-solid fa-tents"></i>
+      <span class="brand-text">Aruva</span>
+    </a>
+
+    <!-- Mobile Toggle -->
+    <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar Content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      <!-- Left Menu -->
+      <ul class="navbar-nav me-auto ms-lg-4 mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link menu-link" href="/listings">Listings</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link menu-link" href="/listings/new">New Listing</a>
+        </li>
+      </ul>
+
+      <!-- Search Bar -->
+      <form class="d-flex search-wrapper me-lg-3" role="search" onsubmit="return false;">
+        <input
+          id="searchInput"
+          class="form-control search-input"
+          type="search"
+          placeholder="Search mountains, camps, temples..."
+          aria-label="Search"
+        />
+        <button class="btn btn-search-icon" type="button">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
+
+      <!-- Profile Dropdown -->
+      <div class="btn-group mt-2 mt-lg-0">
+        <button type="button" class="btn profile-pill dropdown-toggle" data-bs-toggle="dropdown">
+          <i class="fa-solid fa-bars me-2"></i>
+          <i class="fa-solid fa-circle-user profile-icon"></i>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <!-- <a class="nav-link menu-link" href="/">Home</a> -->
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link menu-link" href="/listings">Listings</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link menu-link" href="/listings/new">New Listing</a>
-                </li>
-            </ul>
+        <ul class="dropdown-menu dropdown-menu-end custom-dropdown">
+          <% if(!currUser){ %>
+            <li><a class="dropdown-item fw-bold" href="/signUp">Sign Up</a></li>
+            <li><a class="dropdown-item" href="/login">Log In</a></li>
+          <% } %>
 
-            <form class="d-flex search-wrapper" role="search">
-                <input class="form-control search-input" type="search" placeholder="Search experiences..." aria-label="Search" />
-                <button class="btn btn-search-icon" type="submit">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </button>
-            </form>
+          <% if(currUser){ %>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item text-danger fw-bold" href="/logout">Log Out</a></li>
+          <% } %>
+        </ul>
+      </div>
 
-            <div class="btn-group ms-lg-3 mt-2 mt-lg-0">
-                <button type="button" class="btn profile-pill dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="fa-solid fa-bars me-2"></i>
-                    <i class="fa-solid fa-circle-user profile-icon"></i>
-                </button>
-                
-                <ul class="dropdown-menu dropdown-menu-end custom-dropdown">
-                    <% if(!currUser){ %>
-                        <li><a class="dropdown-item" href="/signUp"><b>Sign Up</b></a></li> 
-                        <li><a class="dropdown-item" href="/login">Log In</a></li> 
-                    <% } %>
-                    <% if(currUser){ %>
-                        <li class="dropdown-divider"></li>
-                        <li><a class="dropdown-item text-danger font-weight-bold" href="/logout">Log Out</a></li> 
-                    <% } %>
-                </ul>
-            </div>
-        </div>
     </div>
+  </div>
 </nav>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const searchInput = document.getElementById("searchInput");
+  const listings = document.querySelectorAll(".listing-card");
+
+  if (!searchInput || listings.length === 0) return;
+
+  searchInput.addEventListener("keyup", () => {
+
+    const value = searchInput.value.toLowerCase();
+
+    listings.forEach(card => {
+
+      const title = card.dataset.title || "";
+      const location = card.dataset.location || "";
+      const country = card.dataset.country || "";
+
+      if (
+        title.includes(value) ||
+        location.includes(value) ||
+        country.includes(value)
+      ) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
+
+    });
+
+  });
+
+});
+</script>

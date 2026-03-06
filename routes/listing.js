@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router({ mergeParams: true });
-const Listing = require("../model/listings")
 const wrapAsync = require("../utils/wrapAsync");
 const listingController = require("../controllers/listings.js")
 const multer  = require('multer');

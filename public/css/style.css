@@ -1,35 +1,86 @@
-body{
-    font-family: "Merriweather", serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-
+body {
+  font-family: "Merriweather", serif;
+  background: linear-gradient(to right, #f8f9fa, #eef1f5);
 }
 
-.card{
-    border-color: azure;
-    margin-bottom: 2rem !important;
-}
-.card-img-top{
-    border-radius: 1rem !important;
-    width:100% !important;
-    object-fit: cover !important;
-}
-.card-body{
-    padding: 0 !important;
-}
-.listing-link{
-    text-decoration: none !important;
+/* 🔍 Search */
+.search-section input {
+  border-radius: 50px;
+  padding-left: 25px;
 }
 
-/* card image overlay */
-.card-img-overlay{
-    opacity: 0 !important;
-}
-.card-img-overlay:hover{
-    font-size: 5px !important;
-    font-style: italic;
-    opacity:1 !important;
-    background-color: rgba(0, 0, 0, 0.244) !important;
-    border-radius: 1rem !important;
+/* 🧭 Categories */
+.category-card {
+  background: white;
+  border-radius: 15px;
+  padding: 20px 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
+.category-card i {
+  font-size: 30px;
+  color: #0d6efd;
+}
+
+.category-card p {
+  margin-top: 8px;
+  font-weight: 600;
+}
+
+.category-card:hover {
+  transform: translateY(-6px);
+  background: linear-gradient(135deg, #0d6efd, #6610f2);
+  color: white;
+}
+
+.category-card:hover i {
+  color: white;
+}
+
+/* 🏡 Listing Cards */
+.listing-shadow {
+  border-radius: 18px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.listing-shadow:hover {
+  transform: scale(1.03);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.card-img-top {
+  height: 18rem;
+  object-fit: cover;
+}
+
+/* Overlay */
+.overlay-text {
+  opacity: 0;
+  background: rgba(0,0,0,0.55);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.listing-shadow:hover .overlay-text {
+  opacity: 1;
+}
+
+/* Button Gradient */
+.btn-gradient {
+  background: linear-gradient(135deg, #ff7a18, #ffb347);
+  color: white;
+  border: none;
+  border-radius: 30px;
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(135deg, #ffb347, #ff7a18);
+}

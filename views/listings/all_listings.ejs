@@ -1,36 +1,96 @@
 <% layout("/layouts/boilerplate") %>
-    <body>
-        <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-2 g-4">
-            <% for (let listing of listings) { %>
-                <div class="col">
-                    <a href="/listings/<%= listing._id %>" class="text-decoration-none listing-link">
-                        <div class="card h-100 shadow-sm">
-                            <img src="<%= listing.image.url %>" class="card-img-top" alt="not available"
-                                style="height: 20rem; object-fit: cover;">
-                            <div class="card-img-overlay">
-                                <h5 class="card-text">
-                                    <%=listing.description%>
-                                </h5>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title text-dark">
-                                    <%= listing.title %>
-                                </h5>
-                                <p class="card-text text-muted">
-                                    <%= listing.location %>
-                                </p>
-                                <p class="card-text fw-bold">
-                                    <%= listing.country %>
-                                </p>
-                                <button class="btn btn-dark w-100">
-                                    ₹<%= Number(listing.price).toLocaleString("en-IN") %> / Night
-                                </button>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <% } %>
+
+<body>
+
+<!-- 🧭 Icon Categories Section -->
+<section class="category-section py-4">
+  <div class="container">
+    <div class="row text-center g-3">
+
+      <div class="col">
+        <div class="category-card">
+          <i class="bi bi-image-alt"></i>
+          <p>Mountains</p>
         </div>
+      </div>
+
+      <div class="col">
+        <div class="category-card">
+          <i class="bi bi-tree"></i>
+          <p>Camps</p>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="category-card">
+          <i class="bi bi-bank"></i>
+          <p>Religious</p>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="category-card">
+          <i class="bi bi-water"></i>
+          <p>Lakes</p>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="category-card">
+          <i class="bi bi-buildings"></i>
+          <p>Cities</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 🏡 Listings -->
+<div class="container my-5">
+  <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 g-4" id="listingContainer">
+
+    <% for (let listing of listings) { %>
+      <div class="col listing-card"
+        data-title="<%= listing.title.toLowerCase() %>"
+        data-location="<%= listing.location.toLowerCase() %>"
+        data-country="<%= listing.country.toLowerCase() %>">
+
+        <a href="/listings/<%= listing._id %>" class="text-decoration-none listing-link">
+          <div class="card h-100 listing-shadow">
+
+            <img src="<%= listing.image.url %>" class="card-img-top" alt="image">
+
+            <div class="card-img-overlay overlay-text">
+              <%= listing.description %>
+            </div>
+
+            <div class="card-body">
+              <h5 class="card-title">
+                <%= listing.title %>
+              </h5>
+
+              <p class="text-muted mb-1">
+                <%= listing.location %>
+              </p>
+
+              <p class="fw-bold">
+                <%= listing.country %>
+              </p>
+
+              <button class="btn btn-gradient w-100">
+                ₹<%= Number(listing.price).toLocaleString("en-IN") %> / Night
+              </button>
+            </div>
+
+          </div>
+        </a>
+      </div>
+    <% } %>
+
+  </div>
+</div>
 
 
-    </body>
+
+</body>
