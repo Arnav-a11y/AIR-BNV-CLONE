@@ -99,11 +99,6 @@ app.use("/listings/:id/reviews", reviewsRoute);
 app.use("/", userRoutes);
 
 
-app.get("/home", (req, res) => {
-    res.send("yes this is working..")
-})
-
-
 // middlewares ... (Error Handling)
 
 // 404 Route handler (Last non-error middleware)
